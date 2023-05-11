@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+   <head>
+      <title>Sensor data </title>
+   </head>
+   <body>
+	<h1>Sensor Data </h1>
+	<h3> TEMPERATURE   ==>  {{ temp  }} oC</h3>
+	<hr>	
+	<h3> Last Sensors Reading: {{ time }} ==> <a href="/"class="button">REFRESH</a></h3>	
+	<hr>
+	<h3> HISTORICAL DATA </h3>
+	<p> Enter range to retrieve (in minutes):
+	<form method="POST">
+		<label for="starttime">From (date and time):</label>
+		<input type="datetime-local" id="starttime" name="starttime">
+
+		<label for="endtime">To (date and time):</label>
+		<input type="datetime-local" id="endtime" name="endtime">
+
+		<input type="submit">
+		</form></p>
+	<hr>
+	<p>From: {{starttime}}</p>
+	<p>To: {{endtime}}</p>
+	<img src="/plot/temp?starttime={{starttime}}&endtime={{endtime}}" alt="Image Placeholder">
+   </body>
+</html>
